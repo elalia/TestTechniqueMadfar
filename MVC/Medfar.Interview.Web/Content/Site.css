@@ -16,9 +16,33 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
+/* set border and size to input form */
+
 input,
 select,
 textarea {
-    max-width: 280px;
+    
+    padding: 15px; 
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width:500px;
 }
+
+/* give nice look to the table */
+#Table th {
+    text-align: left;
+    background-color: #585959;
+    color: white;
+}
+#Table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#Table tr:hover {
+    background-color: #ddd;
+}
+
+   
+
