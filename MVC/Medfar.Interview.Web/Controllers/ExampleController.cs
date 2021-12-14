@@ -13,20 +13,19 @@ namespace Medfar.Interview.Web.Controllers
     {
         public ActionResult Index()
         {
-            ExampleViewModel model = new ExampleViewModel();
-
-            User user = new User();
-            user.id = Guid.NewGuid();
-            user.first_name = "Joe";
-            user.last_name = "Medfar";
-            user.email = "joemedfar@medfarsolutions.com";
-            user.date_created = DateTime.Now;
-            model.Users.Add(user);
+            ExampleViewModel model = new ExampleViewModel();            
+            model = LoadData();
+            //user.id = Guid.NewGuid();
+            //user.first_name = "Joe";
+            //user.last_name = "Medfar";
+            //user.email = "joemedfar@medfarsolutions.com";
+            //user.date_created = DateTime.Now;
+            //model.Users.Add(user);
 
             return View(model);
         }
 
-        public ActionResult LoadData()
+        public ExampleViewModel LoadData()
         {
             ExampleViewModel model = new ExampleViewModel();
 
@@ -37,7 +36,7 @@ namespace Medfar.Interview.Web.Controllers
             var rnd = new Random();
             model.Users = model.Users.OrderBy(item => rnd.Next()).ToList();
 
-            return View("Index",model);
+            return model;
         }
 
     }

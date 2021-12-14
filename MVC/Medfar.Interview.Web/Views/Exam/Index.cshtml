@@ -1,10 +1,34 @@
-﻿@{
+﻿@model Medfar.Interview.Types.User
+@Styles.Render("~/Scripts/Example/css")
+@{
     ViewBag.Title = "Exam";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
+
 <div>
-   <span> Here is where your work goes! </span>
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(m => m.first_name, "First name") <br />
+            @Html.TextBoxFor(m => m.first_name)<br />
+            @Html.ValidationMessageFor(m => m.first_name)<br />
+        </div>
+        <div>
+            @Html.LabelFor(m => m.last_name,"Last name") <br />
+            @Html.TextBoxFor(m => m.last_name)<br />
+            @Html.ValidationMessageFor(m => m.last_name)<br />
+        </div>
+        <div>
+            @Html.LabelFor(m => m.email, "Email") <br />
+            @Html.TextBoxFor(m => m.email)<br />
+            @Html.ValidationMessageFor(m => m.email)<br />
+        </div>
+
+        <div>
+            <input type="submit" value="Add user" />
+        </div>
+    }
 </div>

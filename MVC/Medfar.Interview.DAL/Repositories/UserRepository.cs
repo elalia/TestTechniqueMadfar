@@ -8,7 +8,7 @@ namespace Medfar.Interview.DAL.Repositories
 {
     public class UserRepository
     {
-        private static string _connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=MEDFARINTERVIEW;Integrated Security=True";
+        private static string _connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=MEDFAR_DEV_INTERVIEW;User id=sa;Password=AliaEts;Integrated Security=True";
         private static SqlConnection _dbConnection;
 
         public UserRepository()
@@ -39,7 +39,7 @@ namespace Medfar.Interview.DAL.Repositories
                 messages.Add(message);
             }
             return messages;
-        }
+        }       
 
         public List<User> GetById(Guid id)
         {
@@ -76,7 +76,7 @@ namespace Medfar.Interview.DAL.Repositories
 
             string sqlQuery = @"INSERT INTO" +
                               " Users " +
-                              "values ('" + u.id + "', '" + u.last_name + "', '" + u.first_name + "', '" + u.email + "', '" + u.date_created + "')";
+                              "values ('" + u.id + "', '" + u.last_name + "', '" + u.first_name + "', '" + u.email + "', '" + u.date_created.ToString("yyy-MM-dd hh:mm:ss") + "')";
 
             SqlCommand command = new SqlCommand(sqlQuery, _dbConnection);
 
