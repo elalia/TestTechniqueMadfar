@@ -13,5 +13,11 @@ First name and last name are required
 -	A search text area is added to find any single text field ;
 -	Example table display 30 items at a time, with “Next/Previous” paging buttons ;
 -	Example table load the first 30 items at first time.
+
+
+
 Thank you and have good day;
+
+
+
 Note: the code took me 5 hours, I west time trying to add a branch to your code but I was not possible for me, then I left it to this morning and I create a new repository with the first version and the new one.
